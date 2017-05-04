@@ -1,0 +1,77 @@
+<meta charset="UTF-8">
+<html ng-app="Myschoolbord">
+<div class="slider">
+
+	<div class="slider">
+		<div id="intro" class="intro2">
+			<div class="container">
+			</div>
+		</div>
+	</div>
+	<br><br><br>
+
+<div style="width:50%;margin-left:10%;">
+
+    <h1>Class Formulaire</h1>
+	<form>
+	<div class="form-group">
+						<label for="InputEmail1">Nom du Class</label>
+						<input  ng-model="classs.ClasseName" ng-keyup="changed($classs)"
+						class="form-control" id="InputEmail1" placeholder="Entrer le Nom " >
+	</div>
+	
+	
+	<div class="form-group">
+						<label for="InputEmail1">Coefficient du Class</label>
+						<input    ng-model="classs.Level"
+						class="form-control" id="InputEmail1" placeholder="Entrer le Level " >
+	</div>
+	
+	<!-- debut Les bouttons-->
+					<a class="btn btn-sm btn-primary"  ng-click="save()"  >
+							<span><i class="icon-play2"></i> Ajouter</span>
+					</a>
+					
+					<a class="btn btn-sm btn-color3" ng-click="update()">
+							<span><i class="icon-cog"></i> Modifier</span>
+					</a>
+					
+					<a class="btn btn-sm btn-color5" ng-click="delete(classs)">
+							<span><i class="icon-box3"></i> Supprimer</span>
+					</a>
+
+					
+					<a class="btn btn-sm btn-color4" ng-click="reset()">
+							<span><i class="icon-layers"></i> Reset</span>
+					</a>
+		<!-- fin Les bouttons-->	 
+    </form>
+	
+</div><br><br>
+<div style="margin-left:10%;">
+    <h1>classs List</h1>
+ 
+</div>
+<hr>
+<table id="example" class="table table-striped table-bordered" style="width:50%;margin-left:10%;">
+					<thead>
+						<tr>
+							
+							<th><b>Nom du classs</b></th>
+							<th><b>Level du classs</b></th>
+							
+						</tr>
+					</thead>
+					<tbody ng-repeat="classs in classses" ng-click="selectClasss(classs,$index)" >
+						<tr>
+						
+							<td>{{classs.ClasseName}}</td>
+							<td>{{classs.Level}} </td>
+						
+						</tr>
+						
+					</tbody>
+</table>
+<br><br><br><br>
+</div>
+</html>
